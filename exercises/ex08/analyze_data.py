@@ -34,4 +34,3 @@ name_and_count: DataFrame = df.head(10).select(["name", "count"])
 """ 2.4 Use filter_by_col_value to filter out only people born in 2020. """
 names_2020: DataFrame = df.filter_by_col_value("year", "2020")
 # names_2020.tabulate()
-
