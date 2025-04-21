@@ -1,0 +1,29 @@
+"""A Recursive last algorithm demo"""
+
+from __future__ import annotations
+
+
+class Node:
+    """making a linked list"""
+
+    value: int
+    next: Node | None
+
+    def __init__(self, value: int, next: Node | None):
+        self.value = value
+        self.next = next
+
+    def __str__(self) -> str:
+        if self.next is None:
+            return "(self.value) -> None"
+        else:
+            return "(self.value) -> (self.next)"
+
+courses: Node = Node(3, Node(2, Node(1, None)))
+    print(courses)
+
+    def last(head: Node) -> int:
+        if head.next is None:  # base case
+            return head.value
+        else:
+            return last(head.next)  # Recursive case
